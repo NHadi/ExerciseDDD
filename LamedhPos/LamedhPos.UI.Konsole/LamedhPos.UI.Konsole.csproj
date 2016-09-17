@@ -1,0 +1,92 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{F38A6F73-E8C0-461A-874C-F02711CBCD2C}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>LamedhPos.UI.Konsole</RootNamespace>
+    <AssemblyName>LamedhPos.UI.Konsole</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Program.cs" />
+    <Compile Include="Program2.cs" />
+    <Compile Include="ProgramEF.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ProgramDb.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\LamedhCommon.Domains\LamedhCommon.Domains.csproj">
+      <Project>{50a1cf8d-b649-4760-93ac-a931ebfa1236}</Project>
+      <Name>LamedhCommon.Domains</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\LamedhCommon.Infra.Data.EFRepositories\LamedhCommon.Infra.Data.EFRepositories.csproj">
+      <Project>{8bf9b2ff-2b41-4eea-b815-88bcee8a8245}</Project>
+      <Name>LamedhCommon.Infra.Data.EFRepositories</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\LamedhPos.Domain\LamedhPos.Domain.csproj">
+      <Project>{c5759722-be04-4e91-94ff-476fc9d4e0e4}</Project>
+      <Name>LamedhPos.Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\LamedhPos.Infras.Data.EFRepositories\LamedhPos.Infras.Data.EFRepositories.csproj">
+      <Project>{a0d9aa82-3281-45e8-a559-247a56ddae04}</Project>
+      <Name>LamedhPos.Infras.Data.EFRepositories</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\LamedhPos.Infras.Data.SqlRepositories\LamedhPos.Infras.Data.SqlRepositories.csproj">
+      <Project>{8c6f4e14-af15-45eb-bc6e-49a585cb36c5}</Project>
+      <Name>LamedhPos.Infras.Data.SqlRepositories</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
